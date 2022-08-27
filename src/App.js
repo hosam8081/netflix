@@ -9,7 +9,7 @@ import Account from './pages/Account'
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/netflix">
         <Navbar />
         <Routes>
           <Route element={<PrivateRoute />}>
