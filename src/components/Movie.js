@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart, FaInfoCircle } from "react-icons/fa";
 import { auth, db } from "../firebase";
+import {Link} from 'react-router-dom'
 import {
   arrayUnion,
   doc,
@@ -40,10 +41,13 @@ const Movie = ({ movie }) => {
           {movie?.title}
         </p>
         <p onClick={addMovie}>
+          <Link to={`/movie/${movie.id}`}>
+            <FaInfoCircle className="absolute top-4 right-4 text-gray-300 pl-2 text-2xl"/>
+          </Link>
           {like ? (
-            <FaHeart className='absolute top-4 left-4 text-gray-300' />
+            <FaHeart className="absolute top-4 left-4 text-gray-300" />
           ) : (
-            <FaRegHeart className='absolute top-4 left-4 text-gray-300' />
+            <FaRegHeart className="absolute top-4 left-4 text-gray-300" />
           )}
         </p>
       </div>

@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import Error from "./pages/Error";
 import PrivateRoute from "./components/PrivateRoute";
 import Account from './pages/Account'
+import MovieDetails from "./pages/MovieDetails";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
